@@ -45,7 +45,11 @@ export default function Dashboard() {
 
   const [entryHits, setEntryHits] = useState<EntryHit[]>([]);
   const [exitHits, setExitHits] = useState<ExitHit[]>([]);
-  const [progress, setProgress] = useState({ scanned: 0, universe: SYMBOLS.length, running: false });
+  const [progress, setProgress] = useState<{ scanned: number; universe: number; running: boolean }>({
+    scanned: 0,
+    universe: SYMBOLS.length,
+    running: false,
+  });
   const [scanError, setScanError] = useState<string | null>(null);
 
   const [positions, setPositions] = useState<MockPosition[]>([]);
